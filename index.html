@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction</title>
+</head>
+<body>
+    <h1>Crop Prediction Based on Soil Conditions</h1>
+    <form action="/predict" method="post">
+        <label for="N">Nitrogen (N):</label>
+        <input type="text" id="N" name="N" required><br><br>
+        
+        <label for="P">Phosphorous (P):</label>
+        <input type="text" id="P" name="P" required><br><br>
+        
+        <label for="K">Potassium (K):</label>
+        <input type="text" id="K" name="K" required><br><br>
+        
+        <label for="temperature">Temperature (°C):</label>
+        <input type="text" id="temperature" name="temperature" required><br><br>
+        
+        <label for="humidity">Relative Humidity (%):</label>
+        <input type="text" id="humidity" name="humidity" required><br><br>
+        
+        <label for="ph">Soil pH:</label>
+        <input type="text" id="ph" name="ph" required><br><br>
+        
+        <label for="rainfall">Rainfall (mm):</label>
+        <input type="text" id="rainfall" name="rainfall" required><br><br>
+        
+        <button type="submit">Predict Crop</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Recommended Crop: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
